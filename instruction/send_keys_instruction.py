@@ -2,10 +2,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
-from instruction import Instruction
+from instruction import BaseInstruction
 
 
-class SendKeysInstruction(Instruction):
+class SendKeysInstruction(BaseInstruction):
     def __init__(self, driver, value, by: By, keys: str, timeout=20):
         super().__init__(driver, value)
         self.by = by

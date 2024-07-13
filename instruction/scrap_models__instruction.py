@@ -6,11 +6,11 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
 from field import Field
-from instruction import Instruction
+from instruction import BaseInstruction
 from model import Model
 
 
-class ScrapModelsInstruction(Instruction):
+class ScrapModelsInstruction(BaseInstruction):
     raw_models: List[WebElement]
 
     def __init__(self, driver, by: By, value: str, fields: List[Field], model_name: str, timeout=20):

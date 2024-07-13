@@ -1,10 +1,10 @@
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
-from instruction import Instruction
+from instruction import BaseInstruction
 
 
-class SubmitInstruction(Instruction):
+class SubmitInstruction(BaseInstruction):
     def __init__(self, driver, value, by, timeout=20):
         super().__init__(driver, value)
         self.by = by

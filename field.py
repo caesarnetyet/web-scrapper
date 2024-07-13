@@ -10,4 +10,4 @@ class Field:
 
     @staticmethod
     def from_json(json: dict):
-        return Field(json['name'], By[json['by']], json['value'], json['default'])
+        return Field(json['name'], json['by'], json['value'])

@@ -1,12 +1,11 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 
-from instruction import Instruction
+from instruction import BaseInstruction
 
 
-class NavigateInstruction(Instruction):
-    def __init__(self, direction, driver: WebDriver, value: str):
+class NavigateInstruction(BaseInstruction):
+    def __init__(self, driver: WebDriver, value: str):
         super().__init__(driver, value)
-        self.direction = direction
 
     def execute(self):
         self.driver.get(self.value)
