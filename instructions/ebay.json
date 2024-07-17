@@ -1,45 +1,45 @@
 [
   {
     "action": "navigate",
-    "value": "https://amazon.com.mx"
+    "value": "https://ebay.com"
   },
   {
     "action": "send keys",
     "by": "id",
-    "value": "twotabsearchtextbox",
+    "value": "gh-ac",
     "keys": "Laptop"
   },
   {
     "action": "submit",
     "by": "id",
-    "value": "twotabsearchtextbox"
+    "value": "gh-btn"
   },
   {
     "action": "scrap models",
     "by": "css selector",
-    "model_name": "amazon_laptops",
-    "value": "div[data-component-type=s-search-result]",
+    "model_name": "ebay_laptops",
+    "value": "li.s-item",
     "fields": [
       {
         "name": "name",
         "by": "css selector",
-        "value": ".a-text-normal"
+        "value": ".s-item__title"
       },
       {
         "name": "price",
         "by": "css selector",
-        "value": ".a-price-whole span"
+        "value": ".s-item__price"
       },
       {
         "name": "url",
         "by": "css selector",
-        "value": "a"
+        "value": "a.s-item__link"
       }
     ]
   },
   {
     "action": "to excel",
-    "model_name": "amazon_laptops",
-    "value": "amazon_laptops.xlsx"
+    "model_name": "ebay_laptops",
+    "value": "ebay_laptops.xlsx"
   }
 ]

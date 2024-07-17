@@ -1,20 +1,26 @@
 from typing import List
 
+from internal.model import Model
+
 
 class ModelRepository:
-    _models: List[dict] = []
+    _models_datasource = {}
 
     def __init__(self):
         pass
 
-    def add_models(self, name, model: List[dict]):
-        self._models.append({name: model})
+    def add_models(self, model_name: str, new_models: List[Model]):
+        print(new_models)
+        if model_name not in self._models_datasource:
+            self._models_datasource[model_name] = []
 
-    def get_models_by_name(self, name: str):
-        return [model[name] for model in self._models]
+        self._models_datasource[model_name].extend(new_models)
 
-    def get_models(self):
-        return self._models
+    def get_models_by_name(self, model_name: str) -> List[Model]:
+        return self._models_datasource.get(model_name, [])
 
-    def clear(self):
-        self._models = []
+    def clear_models(self, model_name: str):
+        self._models_datasource[model_name] = []
+
+    def clear_all_models(self):
+        self._models_datasource = {}

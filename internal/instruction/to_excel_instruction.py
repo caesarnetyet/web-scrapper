@@ -11,7 +11,6 @@ class ToExcelInstruction(BaseInstruction):
         self.model_name = model_name
 
     def execute(self):
-        models = self.model_repository.get_models_by_name(self.model_name)
-        for model in models:
-            df = pd.DataFrame(model)
-            df.to_excel(self.value)
+        model = self.model_repository.get_models_by_name(self.model_name)
+        df = pd.DataFrame(model)
+        df.to_excel(f"output/{self.model_name}.xlsx", index=False)
