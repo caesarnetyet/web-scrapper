@@ -1,7 +1,7 @@
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
-from instruction import BaseInstruction
+from internal.instruction import BaseInstruction
 
 
 class SubmitInstruction(BaseInstruction):

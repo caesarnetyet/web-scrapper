@@ -1,6 +1,7 @@
 from selenium import webdriver
 
-from instruction import Instruction, ScrapModelsInstruction
+from repositories.model_repository import ModelRepository
+from web_scrapper import WebScrapper
 
 if __name__ == '__main__':
     # driver = webdriver.Safari()
@@ -32,6 +33,7 @@ if __name__ == '__main__':
     # laptops_df.to_excel('laptops.xlsx', index=False)
 
     driver = webdriver.Safari()
+    model_repository = ModelRepository()
 
     raw_instructions = [
         {
@@ -71,13 +73,14 @@ if __name__ == '__main__':
                     'value': 'a'
                 }
             ],
+        },
+        {
+            'action': 'to excel',
+            'value': 'laptops.xlsx'
         }
     ]
 
-    instructions = [Instruction.from_dict(driver, instruction) for instruction in raw_instructions]
+    web_scrapper = WebScrapper(driver=driver, model_repository=model_repository)
 
-    for instruction in instructions:
-        instruction.execute()
-
-    models = [instruction for instruction in instructions if isinstance(instruction, ScrapModelsInstruction)]
-    print(models[0].scrap_models())
+    web_scrapper.fetch_instructions_from_directory('instructions')
+    web_scrapper.run()

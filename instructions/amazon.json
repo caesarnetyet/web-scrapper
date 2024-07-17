@@ -1,0 +1,45 @@
+[
+  {
+    "action": "navigate",
+    "value": "https://208.87.241.75/__cpi.php?s=UkQ2YXlSaWJuc3ZoeGR2dG04WW9LZ3l2VzJ5R3RyYlJZNGpGTnpTdTVwRXRBdVg5WlhkOW9PeXJVaXpjRFVxU2drbE5CVzVPRmFkd21odVZPNmJab2pHZDFvcDNoY3FXRXBzMG5vTUdFMjQ9&r=aHR0cHM6Ly8yMDguODcuMjQxLjc1Lz9fX2Nwbz1hSFIwY0hNNkx5OTNkM2N1WVcxaGVtOXVMbU52YlM1dGVB&__cpo=1"
+  },
+  {
+    "action": "send keys",
+    "by": "id",
+    "value": "twotabsearchtextbox",
+    "keys": "Laptop"
+  },
+  {
+    "action": "submit",
+    "by": "id",
+    "value": "twotabsearchtextbox"
+  },
+  {
+    "action": "scrap models",
+    "by": "css selector",
+    "model_name": "laptops",
+    "value": "div[data-component-type=s-search-result]",
+    "fields": [
+      {
+        "name": "name",
+        "by": "css selector",
+        "value": ".a-text-normal"
+      },
+      {
+        "name": "price",
+        "by": "css selector",
+        "value": ".a-price span"
+      },
+      {
+        "name": "url",
+        "by": "css selector",
+        "value": "a"
+      }
+    ]
+  },
+  {
+    "action": "to excel",
+    "model_name": "laptops",
+    "value": "laptops.xlsx"
+  }
+]

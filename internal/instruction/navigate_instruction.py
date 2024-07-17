@@ -1,6 +1,6 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
 
-from instruction import BaseInstruction
+from internal.instruction import BaseInstruction
 
 
 class NavigateInstruction(BaseInstruction):

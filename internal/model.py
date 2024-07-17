@@ -4,7 +4,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.support.wait import WebDriverWait
 
-from field import Field
+from internal.field import Field
 
 
 class Model:
