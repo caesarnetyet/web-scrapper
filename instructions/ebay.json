@@ -12,7 +12,7 @@
   {
     "action": "submit",
     "by": "id",
-    "value": "gh-btn"
+    "value": "gh-ac"
   },
   {
     "action": "scrap models",
