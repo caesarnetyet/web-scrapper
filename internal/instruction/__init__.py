@@ -20,7 +20,7 @@ class Instruction(BaseInstruction):
                 case Action.SUBMIT:
                     return SubmitInstruction(driver, data['value'], data['by'])
                 case Action.NAVIGATE:
-                    return NavigateInstruction(driver, data['value'])
+                    return NavigateInstruction(driver, data['value'], data.get('with_proxy', False))
                 case Action.CLICK:
                     return ClickInstruction(driver, data['value'], data['by'])
                 case Action.SCRAP_MODELS:

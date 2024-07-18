@@ -1,7 +1,8 @@
 [
   {
     "action": "navigate",
-    "value": "https://amazon.com.mx"
+    "value": "https://amazon.com.mx",
+    "with_proxy": true
   },
   {
     "action": "send keys",
@@ -33,7 +34,8 @@
       {
         "name": "url",
         "by": "css selector",
-        "value": "a"
+        "value": "a",
+        "attribute": "href"
       }
     ]
   },

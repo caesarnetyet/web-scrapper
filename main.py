@@ -11,10 +11,8 @@ def get_driver():
     match platform.system():
         case 'Windows':
             driver_ = webdriver.Edge()
-        case 'Linux':
-            driver_ = webdriver.Chrome()
         case _:
-            driver_ = webdriver.Safari()
+            driver_ = webdriver.Chrome()
     return driver_
 
 

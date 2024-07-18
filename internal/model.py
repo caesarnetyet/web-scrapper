@@ -40,8 +40,8 @@ class Model:
 
     def get_field_value(self, field: Field):
         try:
-            if field.value.startswith('a'):
-                return self.source.find_element(field.by, field.value).get_attribute('href')
+            if field.attribute:
+                return self.source.find_element(field.by, field.value).get_attribute(field.attribute)
             return self.source.find_element(field.by, field.value).text
         except Exception:
             return field.default

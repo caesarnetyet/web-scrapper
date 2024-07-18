@@ -1,0 +1,47 @@
+[
+  {
+    "action": "navigate",
+    "value": "https://reddit.com/r/popular"
+  },
+  {
+    "action": "scrap models",
+    "by": "css selector",
+    "model_name": "reddit_popular",
+    "value": "article",
+    "fields": [
+      {
+        "name": "subreddit",
+        "by": "css selector",
+        "value": "a[data-testid=subreddit-name]",
+        "attribute": "href"
+      },
+      {
+        "name": "title",
+        "by": "css selector",
+        "value": "article",
+        "attribute": "aria-label"
+      },
+      {
+        "name": "votes",
+        "by": "css selector",
+        "value": "faceplate-number"
+      },
+      {
+        "name": "created_at",
+        "by": "css selector",
+        "value": "time"
+      },
+      {
+        "name": "url",
+        "by": "css selector",
+        "value": "a",
+        "attribute": "href"
+      }
+    ]
+  },
+  {
+    "action": "to excel",
+    "model_name": "reddit_popular",
+    "value": "reddit_popular.xlsx"
+  }
+]
