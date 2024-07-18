@@ -40,9 +40,10 @@ class Model:
 
     def get_field_value(self, field: Field):
         try:
+            element = self.source.find_element(field.by, field.value)
             if field.attribute:
-                return self.source.find_element(field.by, field.value).get_attribute(field.attribute)
-            return self.source.find_element(field.by, field.value).text
+                return element.get_attribute(field.attribute)
+            return element.text
         except Exception:
             return field.default
 

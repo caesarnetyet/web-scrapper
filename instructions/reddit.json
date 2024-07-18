@@ -18,13 +18,13 @@
       {
         "name": "title",
         "by": "css selector",
-        "value": "article",
-        "attribute": "aria-label"
+        "value": "a[slot=title]"
       },
       {
         "name": "votes",
         "by": "css selector",
-        "value": "faceplate-number"
+        "value": "faceplate-number",
+        "attribute": "number"
       },
       {
         "name": "created_at",

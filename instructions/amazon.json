@@ -29,7 +29,7 @@
       {
         "name": "price",
         "by": "css selector",
-        "value": ".a-price-whole span"
+        "value": ".a-price span"
       },
       {
         "name": "url",

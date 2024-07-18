@@ -1,3 +1,4 @@
+import time
 from typing import List
 
 from selenium.webdriver.common.by import By
@@ -33,6 +34,10 @@ class ScrapModelsInstruction(BaseInstruction):
         return ScrapModelsInstruction(driver, by, value, fields, model_name, model_repository, timeout)
 
     def execute(self):
+        # scroll down to load all models
+        self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        time.sleep(2)
+
         self.raw_models = WebDriverWait(self.driver, self.timeout).until(
             ec.presence_of_all_elements_located((str(self.by), self.value))
         )
